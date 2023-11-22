@@ -26,3 +26,13 @@ body {
   padding-top: 10px;
   padding-bottom: 20px;
 }
+
+.btn-yellow .btn-primary{
+  --bs-btn-color: #333333 !important;
+  --bs-btn-bg: #FFCC00 !important;
+  --bs-btn-border-color: #FFCC00 !important;
+  --bs-btn-hover-color: #FFFFFF !important;
+  --bs-btn-hover-border-color: #333333 !important;
+  --bs-btn-hover-bg: #333333 !important;
+  width: 100%;
+}

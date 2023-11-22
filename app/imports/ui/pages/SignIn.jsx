@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
-import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
+import { Alert, Card, Col, Container, Image, Row } from 'react-bootstrap';
 import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
@@ -44,23 +44,25 @@ const SignIn = () => {
   // Otherwise return the Login form.
   return (
     <Container id={PAGE_IDS.SIGN_IN} className="py-3">
+
       <Row className="justify-content-center">
-        <Col xs={5}>
-          <Col className="text-center">
-            <h2>Login to your account</h2>
-          </Col>
+        <Col md={5}>
+          <Image src="/images/logo2.png" width="300px" />
+          <h5 className="text-center">Pacific Talent Management</h5>
           <AutoForm schema={bridge} onSubmit={data => submit(data)}>
             <Card>
               <Card.Body>
                 <TextField id={COMPONENT_IDS.SIGN_IN_FORM_EMAIL} name="email" placeholder="E-mail address" />
                 <TextField id={COMPONENT_IDS.SIGN_IN_FORM_PASSWORD} name="password" placeholder="Password" type="password" />
                 <ErrorsField />
-                <SubmitField id={COMPONENT_IDS.SIGN_IN_FORM_SUBMIT} />
+                <SubmitField className="btn-yellow" id={COMPONENT_IDS.SIGN_IN_FORM_SUBMIT} />
               </Card.Body>
             </Card>
           </AutoForm>
-          <Alert variant="secondary">
-            <Link to="/signup">Click here to Register</Link>
+          <Alert className="text-center" variant="light">
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            <p>Don't have an account?</p>
+            <Link to="/signup">Sign Up Here!</Link>
           </Alert>
           {error === '' ? (
             ''
